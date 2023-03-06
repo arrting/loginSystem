@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include ("partials/header") %>
+    <title>Login</title>
+  </head>
+  <body>
+    <%- include ("partials/nav") %>
+    <h1>Welcome <%= user.name %>'s page.</h1>
+    <img src="<%= user.thumbnail %>" alt="" />
+    <p><%= user.googleID %></p>
+    <P><%= user.date %></P>
+
+    <% if(post.length > 0){ %> <% for(let i = 0; i < post.length; i++){ %>
+    <div class="card" style="width: 18rem">
+      <div class="card-body">
+        <h5 class="card-title"><%= post[i].title %></h5>
+        <p class="card-text"><%= post[i].content %></p>
+        <a href="#" class="btn btn-primary"><%= post[i].date %> </a>
+      </div>
+    </div>
+    <% } %> <% } %>
+  </body>
+</html>
